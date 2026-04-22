@@ -4,10 +4,10 @@ from src.database import Base
 import enum
 
 
-class PaymentStatus(str, enum.Enum):
-    PENDING = "pending"
-    SUCCESS = "success"
-    FAILED = "failed"
+# class PaymentStatus(str, enum.Enum):
+#     PENDING = "pending"
+#     SUCCESS = "success"
+#     FAILED = "failed"
 
 
 class Payment(Base):
@@ -17,5 +17,5 @@ class Payment(Base):
     amount: Mapped[int]
     currency: Mapped[str]
     user_id: Mapped[str]
-    status: Mapped[PaymentStatus]
     stripe_payment_id: Mapped[str] = mapped_column(String, nullable=True)
+    status: Mapped[str]
