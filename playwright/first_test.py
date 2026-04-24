@@ -6,7 +6,10 @@ def run(playwright: Playwright):
     browser = chromium.launch(headless=False)
     page = browser.new_page()
 
-    page.goto("https://stripe.com/")
+    page.goto(
+        "https://playwright.dev/python/docs/api/class-playwright",
+        wait_until="domcontentloaded",
+    )
     print(page.title())
 
     browser.close()
