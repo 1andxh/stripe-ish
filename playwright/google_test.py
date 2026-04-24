@@ -7,10 +7,20 @@ def test_google():
         page = browser.new_page()
 
         page.goto("https://www.google.com")
+        print(page.title())
+
         page.fill("textarea[name='q']", "stripe.com")
-        page.press("textarea[name='q']", "Enter")
+        page.press(
+            "textarea[name='q']",
+            "Enter",
+        )
+
+        # page.wait_for_load_state("load")
+        print(page.title())
 
         assert "Stripe" in page.title()
+        print(page.title())
+
         browser.close()
 
 
