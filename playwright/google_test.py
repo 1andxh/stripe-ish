@@ -18,7 +18,7 @@ def test_google():
         # page.wait_for_load_state("load")
         print(page.title())
 
-        assert "Stripe" in page.title()
+        assert "Google" in page.title()
         print(page.title())
 
         browser.close()
